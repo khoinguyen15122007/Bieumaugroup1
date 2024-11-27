@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu mẫu Thông tin Cá nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .thanks-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Thông tin Cá nhân</h2>
+        <form id="infoForm">
+            <input type="text" id="name" placeholder="Họ và tên" required><br>
+            <input type="number" id="age" placeholder="Tuổi" required><br>
+            <input type="text" id="nationality" placeholder="Quốc tịch" required><br>
+            <input type="text" id="address" placeholder="Địa chỉ" required><br>
+            <input type="tel" id="phone" placeholder="Số điện thoại" required><br>
+            <input type="text" id="job" placeholder="Nghề nghiệp" required><br>
+            <input type="text" id="hobby" placeholder="Sở thích" required><br>
+            <input type="text" id="dream" placeholder="Ước mơ" required><br>
+            <button type="submit">Gửi</button>
+        </form>
+        <div class="thanks-message" id="thanksMessage">
+            <p>Cảm ơn bạn đã gửi thông tin!</p>
+        </div>
+    </div>
+
+    <script>
+        // Khi người dùng nhấn nút Gửi
+        document.getElementById('infoForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Ngừng hành động mặc định của form (không reload trang)
+
+            // Ẩn form đi
+            document.getElementById('infoForm').style.display = 'none';
+
+            // Hiển thị thông báo cảm ơn
+            document.getElementById('thanksMessage').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
